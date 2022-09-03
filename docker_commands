@@ -1,0 +1,44 @@
+## Docker commands used to build the application 
+# TODO: insert the docker build command
+docker build -t techtrends -f ./Dockerfile .
+
+## Docker commands used to run the application
+# TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends
+
+## Docker commands used to get the application logs
+# TODO: insert the docker logs command
+docker logs 52fe3fd037ba64bb336b4babd4b6ed4477fa8d719539078a45ff7602e19b891c
+
+
+## Logs from the container running the TechTrends application
+# TODO: paste logs from the Docker container 
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:app:09/03/2022, 08:13:47 | An existing article is retrieved successfull
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:13:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:13:47] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:13:47] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:13:55] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:13:55] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:09/03/2022, 08:13:56 | The About Us page is retrieved.
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:13:56] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:13:56] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:13:57] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:13:57] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:09/03/2022, 08:14:06 | A new article is created.
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:14:06] "POST /create HTTP/1.1" 302 -
+INFO:app:09/03/2022, 08:14:06 | An existing article is retrieved successfull
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:14:06] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:14:06] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:15:28] "GET /2 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:15:28] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:09/03/2022, 08:15:31 | A non-existing article is accessed and a 404 page is returned.
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:15:31] "GET /22222 HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:15:31] "GET /static/css/main.css HTTP/1.1" 304 -

@@ -1,0 +1,20 @@
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://161.92.117.54:3111/ (Press CTRL+C to quit)
+INFO:app:09/03/2022, 16:07:21 | An existing article is retrieved successfull
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:21] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:21] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:27] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:27] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:09/03/2022, 16:07:36 | The About Us page is retrieved.
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:36] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:36] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:37] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:37] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:09/03/2022, 16:07:44 | A new article is created. 
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:44] "[32mPOST /create HTTP/1.1[0m" 302 -
+INFO:app:09/03/2022, 16:07:44 | An existing article is retrieved successfull
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:44] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:45] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:47] "GET /5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Sep/2022 16:07:47] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
