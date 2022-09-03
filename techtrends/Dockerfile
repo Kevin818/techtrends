@@ -5,11 +5,14 @@ FROM python:3.8-buster
 # set the working directory to /
 WORKDIR /
 
+COPY ./techtrends/requirements.txt ./
+
 # copy all the files from the current directory to the container working directory
 ADD . .
 
 # import dependencies using `` and build the application using `` command
-RUN  pip install -r requirements.txt 
+# local env need use proxy --proxy=http://185.46.212.97:10015
+RUN  pip install --no-cache-dir -r requirements.txt 
 
 RUN python init_db.py
 
