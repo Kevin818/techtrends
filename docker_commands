@@ -41,4 +41,4 @@ INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:15:28] "GET /2 HTTP/1.1" 200 -
 INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:15:28] "GET /static/css/main.css HTTP/1.1" 304 -
 INFO:app:09/03/2022, 08:15:31 | A non-existing article is accessed and a 404 page is returned.
 INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:15:31] "GET /22222 HTTP/1.1" 404 -
-INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:15:31] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [03/Sep/2022 08:15:31] "GET /static/css/main.css HTTP/1.1" 304 - 
