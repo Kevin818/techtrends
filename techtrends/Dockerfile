@@ -10,7 +10,7 @@ ADD . .
 
 # import dependencies using `` and build the application using `` command
 # local env need use proxy --proxy=http://185.46.212.97:10015
-RUN ls -l / pip install --no-cache-dir -r requirements.txt 
+RUN ls -l / pip install -r requirements.txt 
 
 RUN python init_db.py
 
