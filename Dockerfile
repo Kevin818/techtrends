@@ -7,7 +7,7 @@ COPY ./techtrends /app
 WORKDIR /app
 
 # import dependencies using `` and build the application using `` command
-# local env need use proxy --proxy=http://185.46.212.97:10015
+# local env need use proxy --proxy=http://185.46.212.97:10015.
 RUN pip install -r requirements.txt 
 
 RUN python init_db.py
