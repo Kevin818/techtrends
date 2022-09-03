@@ -5,8 +5,6 @@ FROM python:3.8-buster
 # set the working directory to /
 WORKDIR /
 
-COPY ./techtrends/requirements.txt ./
-
 # copy all the files from the current directory to the container working directory
 ADD . .
 
