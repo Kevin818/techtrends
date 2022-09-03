@@ -9,7 +9,7 @@ WORKDIR /
 ADD . .
 
 # import dependencies using `` and build the application using `` command
-RUN  pip install -r requirements.txt --proxy=http://185.46.212.97:10015
+RUN  pip install -r requirements.txt 
 
 RUN python init_db.py
 
