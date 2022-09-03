@@ -2,8 +2,8 @@
 # use the Python:3.8 base image
 FROM python:3.8-buster
 
-# set the working directory to /
-WORKDIR /
+# set the working directory 
+WORKDIR /usr/src/app
 
 # copy all the files from the current directory to the container working directory
 ADD . .
