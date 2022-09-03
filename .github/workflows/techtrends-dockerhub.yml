@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./techtrends/Dockerfile
+          file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: kevin818/techtrends:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/techtrends:latest
