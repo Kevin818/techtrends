@@ -5,6 +5,7 @@ replicaCount: 3
 
 service:
   port: 5111
+  type: ClusterIP
 
 resources:
   requests:
