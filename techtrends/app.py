@@ -1,10 +1,18 @@
 import sqlite3
 import logging
 
+
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
+
 import time
 from datetime import datetime, date, time, timedelta
+
+import sys
+
+connection_count = 0
+stdout_fileno = sys.stdout
+stderr_fileno = sys.stderr
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
@@ -40,8 +48,14 @@ def healthcheck():
 
 @app.route('/metrics')
 def metrics():
+    connection = get_db_connection()
+    posts_count = connection.execute("SELECT * FROM posts").fetchall()
+    global connection_count
+    connection_count += 1
+    connection.close()
+
     response = app.response_class(
-            response=json.dumps({"status":"success","code":0,"data":{"UserCount":140,"UserCountActive":23}}),
+            response=json.dumps({"status":"success","code":0,"data":{"UserCount":len(posts_count),"UserCountActive":connection_count}}),
             status=200,
             mimetype='application/json'
     )
@@ -100,7 +114,13 @@ def create():
 
 # start the application on port 3111
 if __name__ == "__main__":
-        ## stream logs   
-   logging.basicConfig(level=logging.DEBUG)
-
-   app.run(host='0.0.0.0', port='3111')
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    stderr_handler = logging.StreamHandler(sys.stderr)
+    handlers = [stderr_handler, stdout_handler]
+    logging.basicConfig(
+        format="%(levelname)s:%(name)s:%(asctime)s, %(message)s",
+        datefmt="%m/%d/%Y, %H:%M:%S",
+        level=logging.DEBUG,
+        handlers=handlers,
+    )
+    app.run(host='0.0.0.0', port='3111')

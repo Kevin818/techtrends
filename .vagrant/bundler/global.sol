@@ -1,1 +1,1 @@
-{"dependencies":[["vagrant-proxyconf",["= 2.0.10"]]],"checksum":"06254a58ab610cb4ae31bcc4b65eb05fe8da6426fc91aff312ae2ea1cf2b3711","vagrant_version":"2.3.0"}
+{"dependencies":[["vagrant-proxyconf",["= 2.0.10"]],["net-ssh",[">= 2.6.5","< 7.0.0"]],["net-scp",[">= 1.1"]],["log4r",["~> 1.1"]],["vagrant-scp",["= 0.5.9"]]],"checksum":"44f4610d149504a0d26ae9c3e6d02e2801d2bc8054560d998048e8c3a1bcea98","vagrant_version":"2.3.0"}

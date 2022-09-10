@@ -27,15 +27,32 @@ spec:
       - image: Kevin818/{{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: techtrends
+        resources:
+            requests:
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
         ports:
         - containerPort: {{ .Values.containerPort }}
-        readinessProbe:
-          httpGet:
-            path: {{ .Values.readinessProbe.path }}
-            port: {{ .Values.containerPort }}
+          protocol: {{ .Values.service.protocol }}
         livenessProbe:
+          initialDelaySeconds: 10
+          periodSeconds: 5
           httpGet:
             path: {{ .Values.livenessProbe.path }}
-            port: {{ .Values.containerPort }}
+            port: 3111
+        readinessProbe:
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          httpGet:
+            path: {{ .Values.readinessProbe.path }}
+            port: 3111
         resources:
-{{ toYaml .Values.resources | indent 12 }}
+          requests:
+            memory: {{ .Values.resources.requests.memory }}
+            cpu: {{ .Values.resources.requests.cpu }}
+          limits:
+            memory: {{ .Values.resources.limits.memory }}
+            cpu: {{ .Values.resources.limits.cpu }}
